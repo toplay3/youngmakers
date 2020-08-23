@@ -1,0 +1,173 @@
+body {
+  text-align: center;
+  color: rgb(60, 60, 60);
+  margin: 0px;
+}
+
+.title-container {
+  margin-bottom: 80px;
+}
+
+.title-container h1 {
+  font-size: max(5vw, 30px);
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 10px;
+  margin-top: 60px;
+}
+
+.title-container h4 {
+  font-size: max(1.9vw, 11px);
+  font-family: 'Open Sans', sans-serif;
+}
+
+.header-container .header-image {
+  max-width: 1000px;
+  width: calc(100% - 50px);
+  height: auto;
+  border-radius: 10px;
+}
+
+.header-container .header-title {
+  font-size: max(2vw, 16px);
+  font-family: 'chivo', sans-serif;
+  margin-top: 80px;
+  margin-bottom: 120px;
+}
+
+.course {
+  clear: both;
+  max-width: 1000px;
+  width: calc(100% - 50px);
+  overflow: hidden;
+  margin: 0 auto;
+  margin-bottom: 60px;
+  position: relative;
+}
+
+.course .course-info {
+  display: block;
+  width: 50%;
+  float: left;
+  text-align: left;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+}
+
+.course .course-image {
+  width: 45%;
+  float: right;
+}
+
+.course .course-image img {
+  width: calc(100% - 10px);
+  height: auto;
+  border-radius: 15px;
+}
+
+.course .course-info h2 {
+  font-size: 35px;
+  font-family: 'Open Sans', sans-serif;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+.course .course-description {
+  font-family: 'chivo', sans-serif;
+  text-align: justify;
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.course .course-details {
+  margin-top: 18px;
+}
+
+.course .course-details td {
+  font-size: 16px;
+  vertical-align: top;
+  padding-top: 1px;
+}
+
+.course .course-details td:nth-child(1) {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.course .course-details td:nth-child(2) {
+  font-family: 'chivo', sans-serif;
+}
+
+@media only screen and (max-width: 1080px) {
+  .course .course-details {
+    margin-top: 13px;
+  }
+  .course .course-details td {
+    font-size: 15px;
+  }
+  .course .course-description {
+    font-size: 18.5px;
+    line-height: 25px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .title-container {
+    margin-bottom: 40px;
+  }
+  .title-container h1 {
+    margin-top: 30px;
+  }
+
+  .header-container .header-title {
+    margin-top: 60px;
+    margin-bottom: 60px;
+  }
+
+  .course {
+    max-width: 650px;
+    min-width: 500px;
+    margin: 40px auto;
+  }
+  .course .course-info {
+    float: none;
+    position: static;
+    width: 100%;
+  }
+
+  .course .course-info .course-details {
+    position: static;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .course .course-image {
+    float: none;
+    width: 100%;
+    text-align: center;
+  }
+
+  .course .course-details td {
+    font-size: 15px;
+  }
+}
+
+.blog-container {
+  background-image: url(https://balasanastarter.files.wordpress.com/2020/06/acro-yoga-active-balance-1881993.jpg);
+  height: 580px;
+  background-position-x: 50%;
+  background-position-y: 50%;
+  background-size: cover;
+  position: relative;
+}
+
+.blog-container:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  opacity: 0.4;
+  background-color: black;
+}
