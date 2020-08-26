@@ -9,14 +9,14 @@ body {
 }
 
 .title-container h1 {
-  font-size: max(5vw, 30px);
+  font-size: clamp(15px, 5vw, 50px);
   font-family: 'Open Sans', sans-serif;
   margin-bottom: 10px;
   margin-top: 60px;
 }
 
 .title-container h4 {
-  font-size: max(1.9vw, 11px);
+  font-size: clamp(11px, 1.9vw, 20px);
   font-family: 'Open Sans', sans-serif;
 }
 
@@ -48,7 +48,8 @@ body {
 }
 
 .header-container .header-title {
-  font-size: max(2vw, 16px);
+  font-size: 25px;
+  font-size: clamp(16px, 2vw, 25px);
   font-family: 'chivo', sans-serif;
   margin-top: 80px;
   margin-bottom: 120px;
@@ -155,7 +156,8 @@ body {
 }
 
 .blog-container .blog-information .blog-text {
-  font-size: max(min(3vw, 30px), 16px);
+  font-size: 30px;
+  font-size: clamp(16px, 3vw, 30px);
   margin: auto;
   width: 75%;
   min-width: 500px;
@@ -167,7 +169,8 @@ body {
   appearance: none;
   border-radius: 5px;
   height: 50px;
-  font-size: max(min(3vw, 20px), 16px);
+  font-size: 20px;
+  font-size: clamp(16px, 3vw, 20px);
   border: none;
   padding: 0 15px;
   background-color: salmon;
