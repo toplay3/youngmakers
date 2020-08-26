@@ -52,6 +52,10 @@ body {
   font-family: 'chivo', sans-serif;
   margin-top: 80px;
   margin-bottom: 120px;
+  width: 50%;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .course {
@@ -223,6 +227,10 @@ body {
     opacity: 80%;
   }
 
+  .header-container .header-title {
+    width: 80%;
+  }
+
   .course {
     min-width: 400px;
     margin: 40px auto;
@@ -262,5 +270,9 @@ body {
   .course .course-info h2 {
     font-size: 27px;
     margin-top: -5px;
+  }
+
+  .header-container .header-title {
+    width: 100%;
   }
 }
