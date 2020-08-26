@@ -2,6 +2,9 @@ body {
   text-align: center;
   color: rgb(60, 60, 60);
   margin: 0px;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
 }
 
 .title-container {
