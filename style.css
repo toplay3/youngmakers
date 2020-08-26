@@ -224,7 +224,6 @@ body {
   }
 
   .course {
-    max-width: 650px;
     min-width: 400px;
     margin: 40px auto;
   }
@@ -255,7 +254,7 @@ body {
   }
 
   .course .course-details td {
-    font-size: 15px;
+    font-size: 18px;
   }
 }
 
