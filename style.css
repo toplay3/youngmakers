@@ -20,11 +20,31 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 
-.header-container .header-image {
+.header-container .header-image-container {
   max-width: 1000px;
   width: calc(100% - 50px);
   height: auto;
-  border-radius: 10px;
+  margin: auto;
+}
+
+.header-container .slick-arrow{
+  color: salmon;
+  width: 40px;
+  height: 40px;
+  z-index: 1;
+}
+
+.header-container .slick-arrow:before{
+  color: salmon;
+  font-size: 40px;
+}
+
+.header-container .slick-arrow.slick-prev {
+  left: -60px;
+}
+
+.header-container .slick-arrow.slick-next {
+  right: -60px;
 }
 
 .header-container .header-title {
@@ -85,7 +105,7 @@ body {
 
 .course .course-details td {
   font-size: 16px;
-  vertical-align: top;
+  vertical-align: baseline;
   padding-top: 1px;
 }
 
@@ -95,6 +115,65 @@ body {
 
 .course .course-details td:nth-child(2) {
   font-family: 'chivo', sans-serif;
+  padding-left: 5px;
+}
+
+.blog-container {
+  background-image: url(https://balasanastarter.files.wordpress.com/2020/06/acro-yoga-active-balance-1881993.jpg);
+  height: 580px;
+  background-position-x: 50%;
+  background-position-y: 50%;
+  background-size: cover;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.blog-container:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 1;
+  opacity: 0.4;
+  background-color: black;
+}
+
+.blog-container .blog-information {
+  position: absolute;
+  color: white;
+  z-index: 1;
+  font-family: 'chivo', sans-serif;
+  font-weight: bold;
+}
+
+.blog-container .blog-information .blog-text {
+  font-size: max(min(3vw, 30px), 16px);
+  margin: auto;
+  width: 75%;
+  min-width: 500px;
+  margin-bottom: 30px;
+}
+
+.blog-container .blog-opener-button .btn {
+  display: inline-flex;
+  appearance: none;
+  border-radius: 5px;
+  height: 50px;
+  font-size: max(min(3vw, 20px), 16px);
+  border: none;
+  padding: 0 15px;
+  background-color: salmon;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.blog-container .blog-opener-button .btn:hover {
+  background-color: chocolate;
 }
 
 @media only screen and (max-width: 1080px) {
@@ -123,15 +202,40 @@ body {
     margin-bottom: 60px;
   }
 
+  .header-container .header-image-container {
+    width: 100%;
+    border-radius: unset;
+  }
+
+  .header-container .header-image-container .slick-slide img{
+    width: 100%;
+  }
+
+  .header-container .header-image-container .slick-arrow.slick-prev {
+    left: 20px;
+  }
+
+  .header-container .header-image-container .slick-arrow.slick-next {
+    right: 20px;
+  }
+
+  .header-container .header-image-container .slick-arrow {
+    opacity: 80%;
+  }
+
   .course {
     max-width: 650px;
-    min-width: 500px;
+    min-width: 400px;
     margin: 40px auto;
   }
   .course .course-info {
     float: none;
     position: static;
     width: 100%;
+  }
+
+  .course .course-info h2 {
+    font-size: 30px;
   }
 
   .course .course-info .course-details {
@@ -146,28 +250,18 @@ body {
     text-align: center;
   }
 
+  .course .course-image img {
+    width: 100%;
+  }
+
   .course .course-details td {
     font-size: 15px;
   }
 }
 
-.blog-container {
-  background-image: url(https://balasanastarter.files.wordpress.com/2020/06/acro-yoga-active-balance-1881993.jpg);
-  height: 580px;
-  background-position-x: 50%;
-  background-position-y: 50%;
-  background-size: cover;
-  position: relative;
-}
-
-.blog-container:before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: 1;
-  opacity: 0.4;
-  background-color: black;
+@media only screen and (max-width: 500px) {
+  .course .course-info h2 {
+    font-size: 27px;
+    margin-top: -5px;
+  }
 }
