@@ -12,6 +12,7 @@ body {
 }
 
 .title-container h1 {
+  font-size: 25px;
   font-size: clamp(15px, 5vw, 50px);
   font-family: 'Open Sans', sans-serif;
   margin-bottom: 10px;
@@ -19,6 +20,7 @@ body {
 }
 
 .title-container h4 {
+  font-size: 14px;
   font-size: clamp(11px, 1.9vw, 20px);
   font-family: 'Open Sans', sans-serif;
 }
@@ -51,7 +53,7 @@ body {
 }
 
 .header-container .header-title {
-  font-size: 25px;
+  font-size: 14px;
   font-size: clamp(16px, 2vw, 25px);
   font-family: 'chivo', sans-serif;
   margin-top: 80px;
@@ -136,6 +138,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .blog-container:before {
@@ -159,11 +162,10 @@ body {
 }
 
 .blog-container .blog-information .blog-text {
-  font-size: 30px;
+  font-size: 15px;
   font-size: clamp(16px, 3vw, 30px);
   margin: auto;
   width: 75%;
-  min-width: 500px;
   margin-bottom: 30px;
 }
 
@@ -172,7 +174,7 @@ body {
   appearance: none;
   border-radius: 5px;
   height: 50px;
-  font-size: 20px;
+  font-size: 13px;
   font-size: clamp(16px, 3vw, 20px);
   border: none;
   padding: 0 15px;
@@ -238,7 +240,6 @@ body {
   }
 
   .course {
-    min-width: 400px;
     margin: 40px auto;
   }
   .course .course-info {
@@ -268,7 +269,7 @@ body {
   }
 
   .course .course-details td {
-    font-size: 18px;
+    font-size: 15px;
   }
 }
 
@@ -280,5 +281,13 @@ body {
 
   .header-container .header-title {
     width: 100%;
+  }
+
+  .course {
+    width: calc(100% - 20px);
+  }
+
+  .blog-container .blog-information .blog-text {
+    width: calc(100% - 10px);
   }
 }
