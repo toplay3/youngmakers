@@ -267,11 +267,15 @@ h2 {
   color: unset;
 }
 
+.instructors-container .instructor-container .bottom-container {
+  margin-top: 20px;
+}
+
 .instructors-container .instructor-description {
   text-align: justify;
   font-family: 'chivo', sans-serif;
   font-size: 18px;
-  min-height: 155px;
+  min-height: 130px;
 }
 
 .instructors-container .instructor-classes {
@@ -281,10 +285,11 @@ h2 {
 
 .instructors-container .instructor-classes h5 {
   font-family: 'Open Sans', sans-serif;
-  margin: 10px 0;
+  margin: 20px 0 10px 0;
+  font-size: 20px;
 }
 
-.instructors-container .instructor-classes .classes-list .fa {
+.instructors-container .instructor-classes .classes-list .far {
   width: 25px;
 }
 
@@ -391,7 +396,7 @@ h2 {
   }
 
   .instructors-container .instructor-container {
-    margin-bottom: 30px;
+    margin-bottom: 50px;
   }
 
   .instructors-container .instructor-container .top-container .info-container {
@@ -420,5 +425,9 @@ h2 {
 
   .blog-container .blog-information .blog-text {
     width: calc(100% - 10px);
+  }
+
+  .instructors-container .instructor-container .top-container .info-container .social-media {
+    margin-top: 10px;
   }
 }
