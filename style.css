@@ -5,6 +5,7 @@ body {
   -webkit-text-size-adjust: 100%;
   -moz-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
+  background-color: snow;
 }
 
 .title-container {
@@ -95,7 +96,7 @@ body {
   border-radius: 15px;
 }
 
-.course .course-info h2 {
+h2 {
   font-size: 35px;
   font-family: 'Open Sans', sans-serif;
   margin-top: -10px;
@@ -188,6 +189,105 @@ body {
   background-color: chocolate;
 }
 
+.instructors-container {
+  text-align: left;
+  margin: 80px auto;
+  max-width: 1000px;
+  width: calc(100% - 50px);
+  clear: both;
+  overflow: hidden;
+}
+
+.instructors-container .instructor-list {
+  margin-top: 30px;
+  overflow: hidden;
+  clear: both;
+}
+
+.instructors-container .instructor-container {
+  width: 47.5%;
+  float: left;
+  box-sizing: border-box;
+}
+
+.instructors-container .instructor-container:nth-child(odd) {
+  margin-right: 5%;
+}
+
+.instructors-container .instructor-container .top-container {
+  overflow: hidden;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.instructors-container .instructor-container .top-container .photo-container {
+  width: 40%;
+  float: left;
+}
+
+.instructors-container .instructor-container .top-container .photo-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 5px;
+}
+
+.instructors-container .instructor-container .top-container .info-container {
+  width: 60%;
+  float: right;
+  padding-left: 10px;
+  box-sizing: border-box;
+}
+
+.instructors-container .instructor-container .top-container .info-container h5 {
+  margin-top: 0px;
+  font-size: 25px;
+  font-family: 'Open Sans', sans-serif;
+  margin-bottom: 15px;
+}
+
+.instructors-container .instructor-container .top-container .info-container .info-row {
+  margin-bottom: 5px;
+  font-family: 'chivo', sans-serif;
+}
+
+.instructors-container .instructor-container .top-container .info-container .info-row .fa {
+  display: inline-block;
+  width: 22px;
+}
+
+.instructors-container .instructor-container .top-container .info-container .social-media {
+  position: absolute;
+  bottom: 5px;
+}
+
+.instructors-container .instructor-container .top-container .info-container .social-media a {
+  display: inline-block;
+  width: 22px;
+  font-size: 20px;
+  color: unset;
+}
+
+.instructors-container .instructor-description {
+  text-align: justify;
+  font-family: 'chivo', sans-serif;
+  font-size: 18px;
+  min-height: 155px;
+}
+
+.instructors-container .instructor-classes {
+  font-family: 'chivo', sans-serif;
+  font-size: 16px;
+}
+
+.instructors-container .instructor-classes h5 {
+  font-family: 'Open Sans', sans-serif;
+  margin: 10px 0;
+}
+
+.instructors-container .instructor-classes .classes-list .fa {
+  width: 25px;
+}
+
 @media only screen and (max-width: 1150px) {
   .header-container .header-image-container .slick-slide img{
     width: 100%;
@@ -241,16 +341,17 @@ body {
     width: 80%;
   }
 
-  .course {
+  .course, .instructors-container {
     margin: 40px auto;
   }
+
   .course .course-info {
     float: none;
     position: static;
     width: 100%;
   }
 
-  .course .course-info h2 {
+  h2 {
     font-size: 30px;
   }
 
@@ -275,8 +376,36 @@ body {
   }
 }
 
+@media only screen and (max-width: 880px) {
+  .instructors-container .instructor-container {
+    width: 100%;
+    float: none;
+  }
+
+  .instructors-container .instructor-container:nth-child(odd) {
+    margin-right: 0;
+  }
+
+  .instructors-container .instructor-description {
+    min-height: unset;
+  }
+
+  .instructors-container .instructor-container {
+    margin-bottom: 30px;
+  }
+
+  .instructors-container .instructor-container .top-container .info-container {
+    padding-left: 15px;
+  }
+
+  .instructors-container .instructor-container .top-container .info-container .social-media {
+    position: static;
+    margin-top: 30px;
+  }
+}
+
 @media only screen and (max-width: 500px) {
-  .course .course-info h2 {
+  h2 {
     font-size: 27px;
     margin-top: -5px;
   }
@@ -285,7 +414,7 @@ body {
     width: 100%;
   }
 
-  .course {
+  .course, .instructors-container {
     width: calc(100% - 20px);
   }
 
