@@ -1,0 +1,27 @@
+.title-container {
+  margin-bottom: 80px;
+
+  h1 {
+    font-size: 25px;
+    font-size: clamp(15px, 5vw, 50px);
+    font-family: "Open Sans", sans-serif;
+    margin-bottom: 10px;
+    margin-top: 60px;
+  }
+
+  h4 {
+    font-size: 14px;
+    font-size: clamp(11px, 1.9vw, 20px);
+    font-family: "Open Sans", sans-serif;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .title-container {
+    margin-bottom: 40px;
+
+    h1 {
+      margin-top: 30px;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+body {
+  text-align: center;
+  color: rgb(60, 60, 60);
+  margin: 0px;
+  -webkit-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -ms-text-size-adjust: 100%;
+  background-color: snow;
+}
+
+h2 {
+  font-size: 35px;
+  font-family: "Open Sans", sans-serif;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 1000px) {
+  h2 {
+    font-size: 30px;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  h2 {
+    font-size: 27px;
+    margin-top: -5px;
+  }
+}

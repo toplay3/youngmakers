@@ -1,0 +1,153 @@
+.instructors-container {
+  text-align: left;
+  margin: 80px auto;
+  max-width: 1000px;
+  width: calc(100% - 50px);
+  clear: both;
+  overflow: hidden;
+
+  .instructor-list {
+    margin-top: 30px;
+    overflow: hidden;
+    clear: both;
+  }
+
+  .instructor-container {
+    width: 47.5%;
+    float: left;
+    box-sizing: border-box;
+
+    &:nth-child(odd) {
+      margin-right: 5%;
+    }
+
+    .top-container {
+      overflow: hidden;
+      position: relative;
+      margin-bottom: 10px;
+
+      .photo-container {
+        width: 40%;
+        float: left;
+
+        img {
+          width: 100%;
+          height: auto;
+          border-radius: 5px;
+        }
+      }
+
+      .info-container {
+        width: 60%;
+        float: right;
+        padding-left: 10px;
+        box-sizing: border-box;
+
+        h5 {
+          margin-top: 0px;
+          font-size: 25px;
+          font-family: "Open Sans", sans-serif;
+          margin-bottom: 15px;
+        }
+
+        .info-row {
+          margin-bottom: 5px;
+          font-family: "chivo", sans-serif;
+
+          .fa {
+            display: inline-block;
+            width: 22px;
+          }
+        }
+
+        .social-media {
+          position: absolute;
+          bottom: 5px;
+
+          a {
+            display: inline-block;
+            width: 22px;
+            font-size: 20px;
+            color: unset;
+          }
+        }
+      }
+    }
+
+    .bottom-container {
+      margin-top: 20px;
+    }
+  }
+
+  .instructor-description {
+    text-align: justify;
+    font-family: "chivo", sans-serif;
+    font-size: 18px;
+    min-height: 130px;
+  }
+
+  .instructor-classes {
+    font-family: "chivo", sans-serif;
+    font-size: 16px;
+
+    h5 {
+      font-family: "Open Sans", sans-serif;
+      margin: 20px 0 10px 0;
+      font-size: 20px;
+    }
+
+    .classes-list .far {
+      width: 25px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .instructors-container {
+    margin: 40px auto;
+  }
+}
+
+@media only screen and (max-width: 880px) {
+  .instructors-container {
+    .instructor-container {
+      width: 100%;
+      float: none;
+
+      &:nth-child(odd) {
+        margin-right: 0;
+      }
+    }
+
+    .instructor-description {
+      min-height: unset;
+    }
+
+    .instructor-container {
+      margin-bottom: 50px;
+
+      .top-container .info-container {
+        padding-left: 15px;
+
+        .social-media {
+          position: static;
+          margin-top: 30px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .instructors-container {
+    width: calc(100% - 20px);
+  }
+
+  .instructors-container
+    .instructor-container
+    .top-container
+    .info-container
+    .social-media {
+    margin-top: 10px;
+  }
+}
