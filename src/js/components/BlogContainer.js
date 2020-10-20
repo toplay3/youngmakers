@@ -11,7 +11,7 @@ class BlogContainer extends React.Component {
             which differentiate us from traditional schooling.
           </div>
           <div class="blog-opener-button">
-            <div class="btn">View Blog</div>
+            <div class="button">View Blog</div>
           </div>
         </div>
       </div>

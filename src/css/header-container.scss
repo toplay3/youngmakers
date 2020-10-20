@@ -1,28 +1,46 @@
 .header-container {
-  .header-image-container {
+  .carousel {
     max-width: 1000px;
     width: calc(100% - 50px);
     height: auto;
     margin: auto;
-  }
 
-  .slick-arrow {
-    color: salmon;
-    width: 40px;
-    height: 40px;
-    z-index: 1;
-
-    &:before {
-      color: salmon;
-      font-size: 40px;
+    .carousel-control-prev {
+      right: 100%;
+      left: unset;
+    }
+    .carousel-control-next {
+      right: unset;
+      left: 100%;
     }
 
-    &.slick-prev {
-      left: -60px;
+    .carousel-control-prev,
+    .carousel-control-next {
+      opacity: 100%;
+
+      &:hover {
+        opacity: 70%;
+      }
+
+      i.fas {
+        color: salmon;
+        font-size: 30px;
+        position: relative;
+        top: 20%;
+      }
     }
 
-    &.slick-next {
-      right: -60px;
+    .carousel-indicators {
+      bottom: unset;
+      top: 100%;
+      li {
+        height: 5px;
+        width: 5px;
+        margin-left: 10px;
+        margin-right: 10px;
+        border-radius: 50%;
+        background-color: black;
+      }
     }
   }
 
@@ -40,21 +58,25 @@
 }
 
 @media only screen and (max-width: 1150px) {
-  .header-container .header-image-container {
-    .slick-slide img {
-      width: 100%;
+  .header-container .carousel {
+    width: 100%;
+
+    .carousel-control-prev {
+      right: unset;
+      left: 0;
+    }
+    .carousel-control-next {
+      left: unset;
+      right: 0;
     }
 
-    .slick-arrow {
-      &.slick-prev {
-        left: 20px;
-      }
+    .carousel-control-prev,
+    .carousel-control-next {
+      opacity: 70%;
 
-      &.slick-next {
-        right: 20px;
+      &:hover {
+        opacity: 100%;
       }
-
-      opacity: 80%;
     }
   }
 }
@@ -66,11 +88,6 @@
       margin-bottom: 60px;
     }
 
-    .header-image-container {
-      width: 100%;
-      border-radius: unset;
-    }
-
     .header-title {
       width: 80%;
     }
@@ -78,7 +95,13 @@
 }
 
 @media only screen and (max-width: 500px) {
-  .header-container .header-title {
-    width: 100%;
+  .header-container {
+    .header-title {
+      width: 100%;
+    }
+    .carousel-control-prev i.fas,
+    .carousel-control-next i.fas {
+      font-size: 15px !important;
+    }
   }
 }
