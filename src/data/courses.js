@@ -41,7 +41,7 @@ export default [
     title: "Computer Programming",
     description:
       "Learn the most important skill for future jobs by developing keen interest in computer programming, learn the basics of coding and start building apps.",
-    ages: "9-16",
+    ages: "13-17",
     size: "8",
     price: "$400 + software fees",
     duration: "12 weeks (90min/week)",
