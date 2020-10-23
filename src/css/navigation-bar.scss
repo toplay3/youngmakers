@@ -1,0 +1,39 @@
+.navbar {
+  background-color: #252323;
+  justify-content: space-between;
+  padding-top: 0;
+  padding-bottom: 0;
+
+  .nav-links-collapse {
+    justify-content: center;
+  }
+  .nav-links {
+    margin-right: unset !important;
+    .nav-link {
+      color: white;
+      padding-left: 1.2em;
+      padding-right: 1.2em;
+      padding-top: 0;
+      padding-bottom: 0;
+      font-size: 16px;
+    }
+  }
+
+  .collapse,
+  .collapsing {
+    .nav-link {
+      padding-top: 0.5em;
+      padding-bottom: 0.5em;
+    }
+  }
+
+  .nav-location {
+    font-size: 12px;
+    color: white;
+    padding-right: 30px;
+  }
+
+  .navbar-toggler-icon {
+    color: white;
+  }
+}

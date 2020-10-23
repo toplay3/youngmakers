@@ -32,7 +32,7 @@ module.exports = {
         ],
       },
       {
-        test: /\.(jpe?g|png|gif|ttf|eot|svg|swf|otf)/i,
+        test: /\.(jpe?g|png|gif|ttf|eot|svg|swf|otf|woff|woff2)/i,
         use: ["file-loader?name=assets/[name].[ext]"],
       },
     ],
