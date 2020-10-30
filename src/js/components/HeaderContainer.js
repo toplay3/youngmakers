@@ -1,6 +1,9 @@
 import React from "react";
 import "../../css/header-container.scss";
-import headerImage from "../../resources/header.jpg";
+import slider1 from "../../resources/slider-1.jpg";
+import slider2 from "../../resources/slider-2.jpg";
+import slider3 from "../../resources/slider-3.jpg";
+import slider4 from "../../resources/slider-4.jpg";
 import Carousel from "react-bootstrap/Carousel";
 
 class HeaderContainer extends React.Component {
@@ -20,21 +23,28 @@ class HeaderContainer extends React.Component {
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src={headerImage}
+              src={slider1}
               alt="First slide"
             />
           </Carousel.Item>
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src={headerImage}
+              src={slider2}
               alt="Second slide"
             />
           </Carousel.Item>
           <Carousel.Item>
             <img
               className="d-block w-100"
-              src={headerImage}
+              src={slider3}
+              alt="Third slide"
+            />
+          </Carousel.Item>
+          <Carousel.Item>
+            <img
+              className="d-block w-100"
+              src={slider4}
               alt="Third slide"
             />
           </Carousel.Item>

@@ -1,4 +1,9 @@
-import subjectImage from "../resources/subject.jpg";
+import subjectCoverPainting from "../resources/course-cover-painting.jpg";
+import subjectCoverHandicraft from "../resources/course-cover-handicraft.jpg";
+import subjectCoverVideography from "../resources/course-cover-videography.jpg";
+import subjectCoverProgramming from "../resources/course-cover-programming.jpg";
+import subjectCoverElectronics from "../resources/course-cover-electronics.jpg";
+import subjectCoverMaths from "../resources/course-cover-maths.jpg";
 
 export default [
   {
@@ -10,7 +15,7 @@ export default [
     price: "$400 + software fees",
     duration: "12 weeks (90min/week)",
     materials: "Bring your own laptop.",
-    image: subjectImage,
+    image: subjectCoverPainting,
     url: "",
   },
   {
@@ -22,7 +27,7 @@ export default [
     price: "$400 + materials fee",
     duration: "12 weeks (90min/week)",
     materials: "Provided",
-    image: subjectImage,
+    image: subjectCoverHandicraft,
     url: "",
   },
   {
@@ -34,7 +39,7 @@ export default [
     price: "$500 + materials fee",
     duration: "12 weeks (90min/week)",
     materials: "Bring your own camera, laptop and props.",
-    image: subjectImage,
+    image: subjectCoverVideography,
     url: "",
   },
   {
@@ -46,7 +51,7 @@ export default [
     price: "$400 + software fees",
     duration: "12 weeks (90min/week)",
     materials: "Bring your own laptop.",
-    image: subjectImage,
+    image: subjectCoverProgramming,
     url: "",
   },
   {
@@ -58,7 +63,7 @@ export default [
     price: "$800 + material fees",
     duration: "12 weeks (120min/week)",
     materials: "Bring your own laptop. Electronic components provided",
-    image: subjectImage,
+    image: subjectCoverElectronics,
     url: "",
   },
   {
@@ -70,7 +75,7 @@ export default [
     price: "$400 + materials",
     duration: "12 weeks (90min/week)",
     materials: "All provided",
-    image: subjectImage,
+    image: subjectCoverMaths,
     url: "",
   },
 ];
