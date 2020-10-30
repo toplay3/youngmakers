@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "webpack serve",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "deploy": "git stpp dist origin gh-pages"
   },
   "dependencies": {
     "bootstrap": "^4.5.3",
