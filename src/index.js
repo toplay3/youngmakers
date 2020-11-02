@@ -4,26 +4,32 @@ import "./css/style.scss";
 import ReactDOM from "react-dom";
 import React from "react";
 
+import HomePage from "./js/pages/HomePage";
+import OurSchoolPage from "./js/pages/OurSchoolPage";
+
 import NavigationBar from "./js/components/NavigationBar.js";
-import TitleContainer from "./js/components/TitleContainer.js";
-import HeaderContainer from "./js/components/HeaderContainer";
-import CoursesContainer from "./js/components/CoursesContainer";
-import BlogContainer from "./js/components/BlogContainer";
-import InstructorsContainer from "./js/components/InstructorsContainer";
 import FooterContainer from "./js/components/FooterContainer";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
 
 class ReactRoot extends React.Component {
   render() {
     return (
-      <React.Fragment>
+      <Router>
         <NavigationBar></NavigationBar>
-        <TitleContainer></TitleContainer>
-        <HeaderContainer></HeaderContainer>
-        <CoursesContainer></CoursesContainer>
-        <BlogContainer></BlogContainer>
-        <InstructorsContainer></InstructorsContainer>
+        <Switch>
+          <Route exact path="/">
+            <HomePage />
+          </Route>
+          <Route path="/our-school">
+            <OurSchoolPage />
+          </Route>
+        </Switch>
         <FooterContainer></FooterContainer>
-      </React.Fragment>
+      </Router>
     );
   }
 }

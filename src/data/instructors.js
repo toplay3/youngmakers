@@ -1,9 +1,10 @@
-import instructorImage from "../resources/male-teacher.jpg";
+import jasonInstructorImage from "../resources/male-teacher.jpg";
+import beaInstructorImage from "../resources/female-teacher.jpg";
 
 export default [
   {
     name: "Bea Yaomu",
-    photo: instructorImage,
+    photo: beaInstructorImage,
     specialty: "Visual Arts",
     phone: "64-20-409-42115",
     email: "bea@youngmakers.nz",
@@ -23,7 +24,7 @@ export default [
   },
   {
     name: "Jason Yin",
-    photo: instructorImage,
+    photo: jasonInstructorImage,
     specialty: "Technology",
     phone: "64-20-409-42115",
     email: "jason@youngmakers.nz",

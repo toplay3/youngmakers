@@ -4,6 +4,7 @@ import slider1 from "../../resources/slider-1.jpg";
 import slider2 from "../../resources/slider-2.jpg";
 import slider3 from "../../resources/slider-3.jpg";
 import slider4 from "../../resources/slider-4.jpg";
+import headerDivider from "../../resources/header-divider.jpg";
 import Carousel from "react-bootstrap/Carousel";
 
 class HeaderContainer extends React.Component {
@@ -49,22 +50,11 @@ class HeaderContainer extends React.Component {
             />
           </Carousel.Item>
         </Carousel>
-
-        {/* <div id="header-image" class="header-image-container">
-          <div>
-            <img class="header-image" src={headerImage} />
-          </div>
-          <div>
-            <img class="header-image" src={headerImage} />
-          </div>
-          <div>
-            <img class="header-image" src={headerImage} />
-          </div>
-        </div> */}
         <div class="header-title">
           In our beautiful classroom, learn from amazing instructors by building
           fun and interesting projects
         </div>
+        <img src={headerDivider} class="header-divider"/>
       </div>
     );
   }

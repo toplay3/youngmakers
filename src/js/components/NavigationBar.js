@@ -4,6 +4,8 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import Logo from "./Logo";
+import subjects from "../../data/courses";
+import { Link } from 'react-router-dom';
 
 class NavigationBar extends React.Component {
   render() {
@@ -18,7 +20,7 @@ class NavigationBar extends React.Component {
           id="responsive-navbar-nav"
         >
           <Nav className="nav-links">
-            <Nav.Link href="#home" className="link-item">
+            <Nav.Link as={Link} to="/" className="link-item">
               Home
             </Nav.Link>
             <NavDropdown
@@ -26,7 +28,7 @@ class NavigationBar extends React.Component {
               id="collasible-nav-dropdown"
               className="link-item"
             >
-              <NavDropdown.Item href="#action/3.1">Our School</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/our-school">Our School</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">Gallery</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.3">Blog</NavDropdown.Item>
             </NavDropdown>
@@ -35,12 +37,13 @@ class NavigationBar extends React.Component {
               id="collasible-nav-dropdown"
               className="link-item"
             >
-              <NavDropdown.Item href="#action/3.1">
-                Computer Programming
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action/3.3">
-                Digital Art
-              </NavDropdown.Item>
+              {subjects.map((subject, i) => {
+                return (
+                  <NavDropdown.Item href={subject.url}>
+                    {subject.title}
+                  </NavDropdown.Item>
+                );
+              })}
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action/3.3">
                 Instructors
