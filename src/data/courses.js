@@ -16,7 +16,7 @@ export default [
     duration: "12 weeks (90min/week)",
     materials: "Bring your own laptop.",
     image: subjectCoverPainting,
-    url: "",
+    slug: "digital-art",
   },
   {
     title: "Handicraft",
@@ -28,7 +28,7 @@ export default [
     duration: "12 weeks (90min/week)",
     materials: "Provided",
     image: subjectCoverHandicraft,
-    url: "",
+    slug: "handicraft",
   },
   {
     title: "Videography",
@@ -40,7 +40,7 @@ export default [
     duration: "12 weeks (90min/week)",
     materials: "Bring your own camera, laptop and props.",
     image: subjectCoverVideography,
-    url: "",
+    slug: "videography",
   },
   {
     title: "Computer Programming",
@@ -52,7 +52,7 @@ export default [
     duration: "12 weeks (90min/week)",
     materials: "Bring your own laptop.",
     image: subjectCoverProgramming,
-    url: "",
+    slug: "computer-programming",
   },
   {
     title: "Electronics",
@@ -64,7 +64,7 @@ export default [
     duration: "12 weeks (120min/week)",
     materials: "Bring your own laptop. Electronic components provided",
     image: subjectCoverElectronics,
-    url: "",
+    slug: "electronics",
   },
   {
     title: "Practical Mathematics",
@@ -76,6 +76,6 @@ export default [
     duration: "12 weeks (90min/week)",
     materials: "All provided",
     image: subjectCoverMaths,
-    url: "",
+    slug: "practical-mathematics",
   },
 ];

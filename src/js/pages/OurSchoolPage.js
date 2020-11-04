@@ -6,7 +6,7 @@ class OurSchoolPage extends React.Component {
     }
     render() {
       return (
-        <div><br/><br/><br/><br/><br/><br/>Our school page</div>
+        <div><br/>Our school page<br/></div>
       );
     }
   }

@@ -1,6 +1,6 @@
 import React from "react";
-import "../../css/courses-container.scss";
-import subjects from "../../data/courses";
+import "../../../css/home/courses-container.scss";
+import subjects from "../../../data/courses";
 
 class CoursesContainer extends React.Component {
   render() {

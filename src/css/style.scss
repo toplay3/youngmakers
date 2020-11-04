@@ -37,6 +37,10 @@ h6 {
   line-height: initial;
 }
 
-.head-wrapper {
+.homepage-head-wrapper {
   background-color: #ffebe9;
+}
+
+.page-container {
+  min-height: calc(100vh - 100px);
 }

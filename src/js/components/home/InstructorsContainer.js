@@ -1,6 +1,6 @@
 import React from "react";
-import "../../css/instructors-container.scss";
-import instructors from "../../data/instructors";
+import "../../../css/home/instructors-container.scss";
+import instructors from "../../../data/instructors";
 
 class InstructorsContainer extends React.Component {
   render() {

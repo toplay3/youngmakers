@@ -1,5 +1,5 @@
 import React from "react";
-import "../../css/blog-container.scss";
+import "../../../css/home/blog-container.scss";
 
 class BlogContainer extends React.Component {
   render() {

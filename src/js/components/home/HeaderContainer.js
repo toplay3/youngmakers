@@ -1,10 +1,10 @@
 import React from "react";
-import "../../css/header-container.scss";
-import slider1 from "../../resources/slider-1.jpg";
-import slider2 from "../../resources/slider-2.jpg";
-import slider3 from "../../resources/slider-3.jpg";
-import slider4 from "../../resources/slider-4.jpg";
-import headerDivider from "../../resources/header-divider.jpg";
+import "../../../css/home/header-container.scss";
+import slider1 from "../../../resources/slider-1.jpg";
+import slider2 from "../../../resources/slider-2.jpg";
+import slider3 from "../../../resources/slider-3.jpg";
+import slider4 from "../../../resources/slider-4.jpg";
+import headerDivider from "../../../resources/header-divider.jpg";
 import Carousel from "react-bootstrap/Carousel";
 
 class HeaderContainer extends React.Component {

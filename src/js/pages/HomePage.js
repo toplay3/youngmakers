@@ -1,9 +1,9 @@
 import React from "react";
-import TitleContainer from "../components/TitleContainer.js";
-import HeaderContainer from "../components/HeaderContainer";
-import CoursesContainer from "../components/CoursesContainer";
-import BlogContainer from "../components/BlogContainer";
-import InstructorsContainer from "../components/InstructorsContainer";
+import TitleContainer from "../components/home/TitleContainer.js";
+import HeaderContainer from "../components/home/HeaderContainer";
+import CoursesContainer from "../components/home/CoursesContainer";
+import BlogContainer from "../components/home/BlogContainer";
+import InstructorsContainer from "../components/home/InstructorsContainer";
 
 class HomePage extends React.Component {
     componentDidMount() {
@@ -12,7 +12,7 @@ class HomePage extends React.Component {
     render() {
       return (
         <React.Fragment>
-            <div class="head-wrapper">
+            <div class="homepage-head-wrapper">
               <TitleContainer></TitleContainer>
               <HeaderContainer></HeaderContainer>
             </div>

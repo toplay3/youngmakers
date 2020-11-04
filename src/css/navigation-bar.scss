@@ -4,6 +4,10 @@
   padding-top: 0;
   padding-bottom: 0;
 
+  .navbar-brand {
+    height: 48px;
+  }
+
   .nav-links-collapse {
     justify-content: center;
   }
@@ -36,4 +40,8 @@
   .navbar-toggler-icon {
     color: white;
   }
+}
+
+.page-container {
+  padding-top: 48px;
 }

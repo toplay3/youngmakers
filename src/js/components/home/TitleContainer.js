@@ -1,5 +1,5 @@
 import React from "react";
-import "../../css/title-container.scss";
+import "../../../css/home/title-container.scss";
 
 class TitleContainer extends React.Component {
   render() {
