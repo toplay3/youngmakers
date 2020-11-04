@@ -52,7 +52,7 @@ module.exports = {
       filename: "./index.html",
     }),
     new CopyPlugin({
-      patterns: [{ from: "games", to: "games" }],
+      patterns: [{ from: "games", to: "games" }, { from: "_redirects" }],
     }),
   ],
 };
