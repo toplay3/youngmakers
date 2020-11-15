@@ -3,7 +3,7 @@ import beaInstructorImage from "../resources/female-teacher.jpg";
 
 export default [
   {
-    name: "Bea Yaomu",
+    name: "Bea Moon",
     photo: beaInstructorImage,
     specialty: "Visual Arts",
     phone: "64-20-409-42115",

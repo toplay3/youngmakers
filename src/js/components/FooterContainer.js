@@ -1,6 +1,7 @@
 import React from "react";
 import "../../css/footer-container.scss";
 import Logo from "./Logo";
+import { Link } from 'react-router-dom';
 
 class FooterContainer extends React.Component {
   render() {
@@ -11,18 +12,18 @@ class FooterContainer extends React.Component {
             <div class="section-container">
               <h3>About us</h3>
               <div class="section-content">
-                <div class="list-item">
-                  <i class="fas fa-chevron-right"></i>
-                  <span>Our School</span>
-                </div>
-                <div class="list-item">
+                <Link className="list-item" to="/our-school">
+                    <i class="fas fa-chevron-right"></i>
+                    <span>Our School</span>
+                </Link>
+                <Link className="list-item" to="/blog">
                   <i class="fas fa-chevron-right"></i>
                   <span>Blog</span>
-                </div>
-                <div class="list-item">
+                </Link>
+                <Link className="list-item" to="/gallery">
                   <i class="fas fa-chevron-right"></i>
-                  <span>Gallary</span>
-                </div>
+                  <span>Gallery</span>
+                </Link>
               </div>
             </div>
           </div>

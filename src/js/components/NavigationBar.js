@@ -20,7 +20,7 @@ class NavigationBar extends React.Component {
           id="responsive-navbar-nav"
         >
           <Nav className="nav-links">
-            <Nav.Link as={Link} to="/" className="link-item">
+            <Nav.Link eventKey="1" as={Link} to="/" className="link-item">
               Home
             </Nav.Link>
             <NavDropdown
@@ -28,9 +28,9 @@ class NavigationBar extends React.Component {
               id="collasible-nav-dropdown"
               className="link-item"
             >
-              <NavDropdown.Item as={Link} to="/our-school">Our School</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/gallery">Gallery</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/blog">Blog</NavDropdown.Item>
+              <NavDropdown.Item eventKey="2" as={Link} to="/our-school">Our School</NavDropdown.Item>
+              <NavDropdown.Item eventKey="3" as={Link} to="/gallery">Gallery</NavDropdown.Item>
+              <NavDropdown.Item eventKey="4" as={Link} to="/blog">Blog</NavDropdown.Item>
             </NavDropdown>
             <NavDropdown
               title="Courses"
@@ -39,17 +39,17 @@ class NavigationBar extends React.Component {
             >
               {subjects.map((subject, i) => {
                 return (
-                  <NavDropdown.Item as={Link} to={"/course/" + subject.slug}>
+                  <NavDropdown.Item eventKey={7 + i} as={Link} to={"/course/" + subject.slug}>
                     {subject.title}
                   </NavDropdown.Item>
                 );
               })}
               <NavDropdown.Divider />
-              <NavDropdown.Item as={Link} to="/instructors">
+              <NavDropdown.Item eventKey="5" as={Link} to="/instructors">
                 Instructors
               </NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link as={Link} to="/contact" className="link-item">
+            <Nav.Link as={Link} eventKey="6" to="/contact" className="link-item">
               Contact
             </Nav.Link>
           </Nav>

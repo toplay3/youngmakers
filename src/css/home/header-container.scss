@@ -5,6 +5,16 @@
     height: auto;
     margin: auto;
 
+    .carousel-caption {
+      padding-top: 0px;
+      padding-bottom: 0px;
+      bottom: 10px;
+      p {
+        font-size: 20px;
+        text-shadow: 1px 1px 2px #666;
+      }
+    }
+
     .carousel-control-prev {
       right: 100%;
       left: unset;
@@ -25,8 +35,6 @@
       i.fas {
         color: salmon;
         font-size: 30px;
-        position: relative;
-        top: 20%;
       }
     }
 
@@ -97,6 +105,20 @@
     .header-title {
       width: 80%;
     }
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .carousel-caption {
+    p {
+      font-size: 15px !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .carousel-caption {
+    display: none;
   }
 }
 

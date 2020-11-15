@@ -27,6 +27,14 @@
           width: 200px;
           margin-bottom: 5px;
           border-bottom: 1px solid #c6a09b;
+          display: block;
+          color: #2e3a59;
+          cursor: pointer;
+          &:hover {
+            text-decoration: none;
+            color: #688ae2;
+            border-color: #688ae2;
+          }
         }
 
         .fas {

@@ -27,6 +27,9 @@ class HeaderContainer extends React.Component {
               src={slider1}
               alt="First slide"
             />
+            <Carousel.Caption>
+              <p>Painting by art student - Age 12</p>
+            </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
             <img
@@ -34,6 +37,9 @@ class HeaderContainer extends React.Component {
               src={slider2}
               alt="Second slide"
             />
+            <Carousel.Caption>
+              <p>Painting by art student - Age 12</p>
+            </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
             <img
@@ -41,6 +47,9 @@ class HeaderContainer extends React.Component {
               src={slider3}
               alt="Third slide"
             />
+            <Carousel.Caption>
+              <p>Painting by art student - Age 12</p>
+            </Carousel.Caption>
           </Carousel.Item>
           <Carousel.Item>
             <img
@@ -48,6 +57,9 @@ class HeaderContainer extends React.Component {
               src={slider4}
               alt="Third slide"
             />
+            <Carousel.Caption>
+              <p>Painting by art student - Age 12</p>
+            </Carousel.Caption>
           </Carousel.Item>
         </Carousel>
         <div class="header-title">
