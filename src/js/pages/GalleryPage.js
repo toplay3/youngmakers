@@ -15,6 +15,10 @@ class GalleryPage extends React.Component {
       };
 
       this.modalArrowsRef = React.createRef();
+      this.swipeStartX = null;
+      this.swipeStartY = null;
+      this.swipeMoveX = null;
+      this.swipeMoveY = null;
     }
 
     componentDidMount() {
@@ -53,34 +57,60 @@ class GalleryPage extends React.Component {
       })
     }
 
+    handleImageTouchStart(e) {
+      this.swipeStartX = e.targetTouches[0].clientX;
+      this.swipeStartY = e.targetTouches[0].clientY;
+    }
+
+    handleImageTouchMove(e) {
+      this.swipeMoveX = e.targetTouches[0].clientX;
+      this.swipeMoveY = e.targetTouches[0].clientY;
+    }
+
+    handleImageTouchEnd(e) {
+      const xDiff = this.swipeMoveX - this.swipeStartX;
+      const yDiff = this.swipeMoveY - this.swipeStartY;
+
+      if(Math.abs(yDiff) > 100) return;
+      if(xDiff > 50) {
+        // prev
+        this.selectImage(this.getPrevImage());
+      } else if(xDiff < -50) {
+        // next
+        this.selectImage(this.getNextImage());
+      }
+    }
+
     closeModal() {
       this.setState((state, props) => {
         return {
           modalOpen: false
         };
       })
+      this.swipeStartX = null;
+      this.swipeStartY = null;
+      this.swipeMoveX = null;
+      this.swipeMoveY = null;
     }
 
-    nextImage() {
-      this.setState((state, props) => {
-        for(let i = 0; i < state.images.length - 1; i++) {
-          if(this.state.images[i].id === this.state.imageSelected.id) {
-            return {imageSelected: this.state.images[i + 1]};
-          }
+    getNextImage() {
+      if(!this.state.imageSelected) return null;
+      for(let i = 0; i < this.state.images.length - 1; i++) {
+        if(this.state.images[i].id === this.state.imageSelected.id) {
+          return this.state.images[i + 1];
         }
-        return {imageSelected: this.state.images[0]};
-      });
+      }
+      return this.state.images[0];
     }
 
-    prevImage() {
-      this.setState((state, props) => {
-        for(let i = 1; i < state.images.length; i++) {
-          if(this.state.images[i].id === this.state.imageSelected.id) {
-            return {imageSelected: this.state.images[i - 1]};
-          }
+    getPrevImage() {
+      if(!this.state.imageSelected) return null;
+      for(let i = 1; i < this.state.images.length; i++) {
+        if(this.state.images[i].id === this.state.imageSelected.id) {
+          return this.state.images[i - 1];
         }
-        return {imageSelected: this.state.images[this.state.images.length - 1]};
-      });
+      }
+      return this.state.images[this.state.images.length - 1];
     }
 
     render() {
@@ -98,6 +128,8 @@ class GalleryPage extends React.Component {
         );
       });
 
+      const nextImage = this.getNextImage();
+      const prevImage = this.getPrevImage();
       const imageSelected = this.state.imageSelected;
       if(this.state.modalOpen) {
         setTimeout(() => {
@@ -130,16 +162,22 @@ class GalleryPage extends React.Component {
                 <Modal.Title>{imageSelected?.description}</Modal.Title>
               </Modal.Header>
               <Modal.Body>
-                <img class="modal-image" src={imageSelected?.src}/>
+                <img 
+                onTouchStart={(e) => this.handleImageTouchStart(e)}
+                onTouchMove={(e) => this.handleImageTouchMove(e)}
+                onTouchEnd={(e) => this.handleImageTouchEnd(e)}
+                class="modal-image" src={imageSelected?.src}/>
               </Modal.Body>
               <div class="arrows-container" ref={this.modalArrowsRef}>
-                <div class="left-arrow" onClick={() => this.prevImage()}>
+                <div class="left-arrow" onClick={() => this.selectImage(prevImage)}>
                   <i class="fas fa-chevron-left"></i>
                 </div>
-                <div class="right-arrow" onClick={() => this.nextImage()}>
+                <div class="right-arrow" onClick={() => this.selectImage(nextImage)}>
                   <i class="fas fa-chevron-right"></i>
                 </div>
               </div>
+              <img class="hidden-image" height="0" width="0" src={nextImage?.src}/>
+              <img class="hidden-image" height="0" width="0" src={prevImage?.src}/>
             </Modal>
         </div>
       );
