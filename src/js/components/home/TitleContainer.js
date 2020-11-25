@@ -6,7 +6,15 @@ class TitleContainer extends React.Component {
     return (
       <div class="title-container">
         <h1>Young Makers Academy</h1>
-        <h4>After school program for future artists and technologists</h4>
+        <h4>After school art and technology classes for aged 9 - 17</h4>
+        <p>
+          <span>Programming</span>
+          <span>Electronics</span>
+          <span>Maths</span>
+          <span>Art</span>
+          <span>Crafts</span>
+          <span>Videography</span>
+        </p>
       </div>
     );
   }
