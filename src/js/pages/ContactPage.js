@@ -6,7 +6,9 @@ class ContactPage extends React.Component {
     }
     render() {
       return (
-        <div><br/>Contact page<br/></div>
+        <div>
+          <div>Contact page</div>
+        </div>
       );
     }
   }

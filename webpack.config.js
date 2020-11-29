@@ -56,7 +56,7 @@ module.exports = {
       filename: "./index.html",
     }),
     new CopyPlugin({
-      patterns: [{ from: "games", to: "games" }, { from: "_redirects" }],
+      patterns: [{ from: "games", to: "games" }, { from: "_redirects" }, { from: "zohoverify", to: "zohoverify" }],
     }),
   ],
 };
