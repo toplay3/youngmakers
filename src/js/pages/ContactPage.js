@@ -61,10 +61,10 @@ class ContactPage extends React.Component {
             </Form>
           </div>
           <Modal show={this.state.modalOpen} onHide={() => this.closeModal()} className="gallery-page-modal">
-              <Modal.Header closeButton>
-                <div>Thank You, Message Sucessfully Received</div>
-              </Modal.Header>
-            </Modal>
+            <Modal.Header closeButton>
+              <div>Thank You, Message Sucessfully Received</div>
+            </Modal.Header>
+          </Modal>
         </div>
       );
     }
