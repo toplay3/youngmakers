@@ -2,6 +2,7 @@
   padding-top: 20px;
   h1 {
     margin: 20px;
+    font-family: "Open Sans", sans-serif;
   }
   .categories-container {
     margin: 20px;
@@ -98,7 +99,7 @@
   }
 }
 
-.modal {
+.gallery-page-modal {
   padding-right: 0px !important;
   flex-direction: column;
   align-items: center;
@@ -159,7 +160,7 @@
 }
 
 @media only screen and (max-width: 700px) {
-  .modal {
+  .gallery-page-modal {
     .left-arrow,
     .right-arrow {
       padding: 10px;

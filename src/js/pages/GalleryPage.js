@@ -1,5 +1,5 @@
 import React from "react";
-import "../../css/gallery.scss";
+import "../../css/gallery-page.scss";
 import { Categories, Pictures } from "../../data/gallery.js";
 import { Badge, Modal } from 'react-bootstrap';
 import { CSSTransitionGroup } from 'react-transition-group';
@@ -157,7 +157,7 @@ class GalleryPage extends React.Component {
               {placeholders}
             </CSSTransitionGroup>
           </div>
-          <Modal show={this.state.modalOpen} onHide={() => this.closeModal()}>
+          <Modal show={this.state.modalOpen} onHide={() => this.closeModal()} className="gallery-page-modal">
               <Modal.Header closeButton>
                 <Modal.Title>{imageSelected?.description}</Modal.Title>
               </Modal.Header>
