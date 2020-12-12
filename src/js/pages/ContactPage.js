@@ -1,6 +1,6 @@
 import React from "react";
 import { Form, Button, Modal } from "react-bootstrap";
-import $ from 'jquery';
+import jQuery from 'jquery';
 import "../../css/contact-page.scss";
 
 class ContactPage extends React.Component {
@@ -17,11 +17,11 @@ class ContactPage extends React.Component {
     }
 
     submitForm() {
-      $.ajax({
+      jQuery.ajax({
         url: 'https://usebasin.com/f/bc2928f260f0',
         type: 'post',
         dataType: 'application/x-www-form-urlencoded',
-        data: $(this.formRef.current).serialize()
+        data: jQuery(this.formRef.current).serialize()
       }).always(() => {
         this.setState(() => {
           return {
@@ -29,7 +29,7 @@ class ContactPage extends React.Component {
           }
         });
 
-        $(this.formRef.current).find("input[type=text], input[type=email], textarea").val("");
+        jQuery(this.formRef.current).find("input[type=text], input[type=email], textarea").val("");
       });
     }
 
