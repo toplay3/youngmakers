@@ -15,6 +15,18 @@ class TitleContainer extends React.Component {
           <span>Crafts</span>
           <span>Videography</span>
         </p>
+        <table>
+          <tr>
+            <td>Programming</td>
+            <td>Electronics</td>
+            <td>Maths</td>
+          </tr>
+          <tr>
+            <td>Art</td>
+            <td>Crafts</td>
+            <td>Videography</td>
+          </tr>
+        </table>
       </div>
     );
   }

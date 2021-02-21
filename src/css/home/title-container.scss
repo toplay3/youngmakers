@@ -32,6 +32,29 @@
       }
     }
   }
+  table {
+    display: none;
+    background-color: #343a40;
+    padding: 6px;
+    border-radius: 5px;
+    margin-top: 30px;
+    tr {
+      td {
+        font-size: 12px;
+        color: white;
+        padding: 0 8px;
+        &:not(:last-child) {
+          border-right: 1px solid rgb(100, 100, 100);
+        }
+      }
+      &:not(:last-child) {
+        border-bottom: 1px solid rgb(100, 100, 100);
+        td {
+          padding-bottom: 3px;
+        }
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 600px) {
@@ -43,5 +66,16 @@
       }
     }
     margin-bottom: 30px;
+  }
+}
+
+@media only screen and (max-width: 380px) {
+  .title-container {
+    p {
+      display: none;
+    }
+    table {
+      display: inline-block;
+    }
   }
 }
