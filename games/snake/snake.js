@@ -1,5 +1,11 @@
 class SnakeGame {
-  constructor(canvasElement, scoreElement, gameSpeed, pixelsPerGrid, growthIncrement) {
+  constructor(
+    canvasElement,
+    scoreElement,
+    gameSpeed,
+    pixelsPerGrid,
+    growthIncrement
+  ) {
     this.canvasElement = canvasElement;
     this.scoreElement = scoreElement;
     // Grids growth when apple is eaten
@@ -11,7 +17,10 @@ class SnakeGame {
     this.boardPixelDimensions = [canvasElement.width, canvasElement.height];
     // Grids on the board
     // coordinates start from top left
-    this.boardGridDimensions = [canvasElement.width / pixelsPerGrid, canvasElement.height / pixelsPerGrid];
+    this.boardGridDimensions = [
+      canvasElement.width / pixelsPerGrid,
+      canvasElement.height / pixelsPerGrid,
+    ];
     this.pixelsPerGrid = pixelsPerGrid;
     // Start at roughly the center of the board
     const startingPosition = [
@@ -22,13 +31,20 @@ class SnakeGame {
     // Can probably optimise this using a doubly linked list
     // coordinates start from top left
     this.snakeState = [startingPosition];
-    this.drawRect(startingPosition[0] * pixelsPerGrid, startingPosition[1] * pixelsPerGrid, pixelsPerGrid, pixelsPerGrid, "blue");
+    this.drawRect(
+      startingPosition[0] * pixelsPerGrid,
+      startingPosition[1] * pixelsPerGrid,
+      pixelsPerGrid,
+      pixelsPerGrid,
+      "blue"
+    );
     // The current direction of the snake
     // enum: 0 = stationary, 1 = left, 2 = right, 3 = top, 4 = bottom
     this.currentDirection = 0;
     this.newDirections = [];
     // Last timestamp of when the snake changed frames
     this.lastGridTime = null;
+    this.gameStopped = false;
 
     this.growthSpurt = 0;
     this.score = 0;
@@ -40,28 +56,47 @@ class SnakeGame {
   addEventListeners() {
     document.addEventListener("keydown", (event) => {
       const keyCode = event.which || event.keyCode;
-      const lastDirection = this.newDirections.length > 0 ? this.newDirections[this.newDirections.length - 1] : this.currentDirection;
+      const lastDirection =
+        this.newDirections.length > 0
+          ? this.newDirections[this.newDirections.length - 1]
+          : this.currentDirection;
       switch (keyCode) {
         case 37:
-          if(lastDirection === 3 || lastDirection === 4 || lastDirection === 0){
+          if (
+            lastDirection === 3 ||
+            lastDirection === 4 ||
+            lastDirection === 0
+          ) {
             this.newDirections.push(1);
           }
           event.preventDefault();
           break;
         case 38:
-          if(lastDirection === 1 || lastDirection === 2 || lastDirection === 0){
+          if (
+            lastDirection === 1 ||
+            lastDirection === 2 ||
+            lastDirection === 0
+          ) {
             this.newDirections.push(3);
           }
           event.preventDefault();
           break;
         case 39:
-          if(lastDirection === 3 || lastDirection === 4 || lastDirection === 0){
+          if (
+            lastDirection === 3 ||
+            lastDirection === 4 ||
+            lastDirection === 0
+          ) {
             this.newDirections.push(2);
           }
           event.preventDefault();
           break;
         case 40:
-          if(lastDirection === 1 || lastDirection === 2 || lastDirection === 0){
+          if (
+            lastDirection === 1 ||
+            lastDirection === 2 ||
+            lastDirection === 0
+          ) {
             this.newDirections.push(4);
           }
           event.preventDefault();
@@ -69,7 +104,7 @@ class SnakeGame {
         default:
           null;
       }
-      if(this.currentDirection === 0) {
+      if (this.currentDirection === 0) {
         // start rendering new snake
         this.lastGridTime = performance.now();
         this.render(this.lastGridTime);
@@ -78,22 +113,35 @@ class SnakeGame {
   }
 
   generateApple() {
-    const newApple = [Math.round(Math.random() * (this.boardGridDimensions[0] - 1)), Math.round(Math.random() * (this.boardGridDimensions[1] - 1))];
-    const appleTouchesSnake = this.snakeState.find(function(grid){
-      return (grid[0] === newApple[0]) && (grid[1] === newApple[1]);
+    const newApple = [
+      Math.round(Math.random() * (this.boardGridDimensions[0] - 1)),
+      Math.round(Math.random() * (this.boardGridDimensions[1] - 1)),
+    ];
+    const appleTouchesSnake = this.snakeState.find(function (grid) {
+      return grid[0] === newApple[0] && grid[1] === newApple[1];
     });
 
-    if(appleTouchesSnake) { // Apple touches the snake, make a new one
+    if (appleTouchesSnake) {
+      // Apple touches the snake, make a new one
       this.generateApple();
     } else {
       this.appleCoordinates = newApple;
-      this.drawRect(newApple[0] * this.pixelsPerGrid, newApple[1] * this.pixelsPerGrid, this.pixelsPerGrid, this.pixelsPerGrid, "red");
+      this.drawRect(
+        newApple[0] * this.pixelsPerGrid,
+        newApple[1] * this.pixelsPerGrid,
+        this.pixelsPerGrid,
+        this.pixelsPerGrid,
+        "red"
+      );
     }
   }
 
   eatApple() {
     const headGrid = this.snakeState[this.snakeState.length - 1];
-    if(headGrid[0] === this.appleCoordinates[0] && headGrid[1] === this.appleCoordinates[1]) {
+    if (
+      headGrid[0] === this.appleCoordinates[0] &&
+      headGrid[1] === this.appleCoordinates[1]
+    ) {
       this.score++;
       this.scoreElement.innerHTML = this.score;
       this.growthSpurt += this.growthIncrement;
@@ -104,14 +152,19 @@ class SnakeGame {
   isTouching() {
     // If it's touching than the last array entry will duplicate
     const lastGrid = this.snakeState[this.snakeState.length - 1];
-    const dupIndex = this.snakeState.findIndex(function(grid) {
-      return (grid[0] === lastGrid[0]) && (grid[1] === lastGrid[1]);
+    const dupIndex = this.snakeState.findIndex(function (grid) {
+      return grid[0] === lastGrid[0] && grid[1] === lastGrid[1];
     });
     if (dupIndex < this.snakeState.length - 1) {
       return true;
     }
     // Check if snake is touching the edge of the map
-    if(lastGrid[0] > (this.boardGridDimensions[0] - 1) || lastGrid[0] < 0 || lastGrid[1] > (this.boardGridDimensions[1] - 1) || lastGrid[1] < 0) {
+    if (
+      lastGrid[0] > this.boardGridDimensions[0] - 1 ||
+      lastGrid[0] < 0 ||
+      lastGrid[1] > this.boardGridDimensions[1] - 1 ||
+      lastGrid[1] < 0
+    ) {
       return true;
     }
     return false;
@@ -120,7 +173,10 @@ class SnakeGame {
   calculateMovement(newTimestamp) {
     // How many pixels moved since last grid modification
     return Math.round(
-      (this.gameSpeed * this.pixelsPerGrid * (newTimestamp - this.lastGridTime)) / 1000
+      (this.gameSpeed *
+        this.pixelsPerGrid *
+        (newTimestamp - this.lastGridTime)) /
+        1000
     );
   }
 
@@ -132,16 +188,17 @@ class SnakeGame {
   }
 
   repaint(movementPixels) {
-    if(this.growthSpurt < 1) { // Don't cut tail if spurt
+    if (this.growthSpurt < 1) {
+      // Don't cut tail if spurt
       // Render tail
       var tailDirection = this.currentDirection;
       const tailGrid = this.snakeState[0];
-      if(this.snakeState.length > 1) {
+      if (this.snakeState.length > 1) {
         const secondTailGrid = this.snakeState[1];
         if (tailGrid[0] - 1 === secondTailGrid[0]) {
           // left
           tailDirection = 1;
-        } else if (tailGrid[0] + 1 === secondTailGrid[0]){
+        } else if (tailGrid[0] + 1 === secondTailGrid[0]) {
           // right
           tailDirection = 2;
         } else if (tailGrid[1] - 1 === secondTailGrid[1]) {
@@ -153,32 +210,92 @@ class SnakeGame {
         }
       }
 
-      if(tailDirection === 1) { //left
-        this.drawRect(tailGrid[0] * this.pixelsPerGrid + this.pixelsPerGrid - movementPixels, tailGrid[1] * this.pixelsPerGrid, movementPixels, this.pixelsPerGrid, "white");
-      } else if (tailDirection === 2) { // right
-        this.drawRect(tailGrid[0] * this.pixelsPerGrid, tailGrid[1] * this.pixelsPerGrid, movementPixels, this.pixelsPerGrid, "white");
-      } else if (tailDirection === 3) { // up
-        this.drawRect(tailGrid[0] * this.pixelsPerGrid, tailGrid[1] * this.pixelsPerGrid + this.pixelsPerGrid - movementPixels, this.pixelsPerGrid, movementPixels, "white");
-      } else if (tailDirection === 4) { // down
-        this.drawRect(tailGrid[0] * this.pixelsPerGrid, tailGrid[1] * this.pixelsPerGrid, this.pixelsPerGrid, movementPixels, "white");
+      if (tailDirection === 1) {
+        //left
+        this.drawRect(
+          tailGrid[0] * this.pixelsPerGrid +
+            this.pixelsPerGrid -
+            movementPixels,
+          tailGrid[1] * this.pixelsPerGrid,
+          movementPixels,
+          this.pixelsPerGrid,
+          "white"
+        );
+      } else if (tailDirection === 2) {
+        // right
+        this.drawRect(
+          tailGrid[0] * this.pixelsPerGrid,
+          tailGrid[1] * this.pixelsPerGrid,
+          movementPixels,
+          this.pixelsPerGrid,
+          "white"
+        );
+      } else if (tailDirection === 3) {
+        // up
+        this.drawRect(
+          tailGrid[0] * this.pixelsPerGrid,
+          tailGrid[1] * this.pixelsPerGrid +
+            this.pixelsPerGrid -
+            movementPixels,
+          this.pixelsPerGrid,
+          movementPixels,
+          "white"
+        );
+      } else if (tailDirection === 4) {
+        // down
+        this.drawRect(
+          tailGrid[0] * this.pixelsPerGrid,
+          tailGrid[1] * this.pixelsPerGrid,
+          this.pixelsPerGrid,
+          movementPixels,
+          "white"
+        );
       }
     }
 
     var headDirection = this.currentDirection;
     const headGrid = this.snakeState[this.snakeState.length - 1];
-    if(headDirection === 1) { //left
-      this.drawRect((headGrid[0]) * this.pixelsPerGrid - movementPixels, headGrid[1] * this.pixelsPerGrid, movementPixels, this.pixelsPerGrid, "blue");
-    } else if (headDirection === 2) { // right
-      this.drawRect((headGrid[0] + 1) * this.pixelsPerGrid, headGrid[1] * this.pixelsPerGrid, movementPixels, this.pixelsPerGrid, "blue");
-    } else if (headDirection === 3) { // up
-      this.drawRect(headGrid[0] * this.pixelsPerGrid, (headGrid[1]) * this.pixelsPerGrid - movementPixels, this.pixelsPerGrid, movementPixels, "blue");
-    } else if (headDirection === 4) { // down
-      this.drawRect(headGrid[0] * this.pixelsPerGrid, (headGrid[1] + 1) * this.pixelsPerGrid, this.pixelsPerGrid, movementPixels, "blue");
+    if (headDirection === 1) {
+      //left
+      this.drawRect(
+        headGrid[0] * this.pixelsPerGrid - movementPixels,
+        headGrid[1] * this.pixelsPerGrid,
+        movementPixels,
+        this.pixelsPerGrid,
+        "blue"
+      );
+    } else if (headDirection === 2) {
+      // right
+      this.drawRect(
+        (headGrid[0] + 1) * this.pixelsPerGrid,
+        headGrid[1] * this.pixelsPerGrid,
+        movementPixels,
+        this.pixelsPerGrid,
+        "blue"
+      );
+    } else if (headDirection === 3) {
+      // up
+      this.drawRect(
+        headGrid[0] * this.pixelsPerGrid,
+        headGrid[1] * this.pixelsPerGrid - movementPixels,
+        this.pixelsPerGrid,
+        movementPixels,
+        "blue"
+      );
+    } else if (headDirection === 4) {
+      // down
+      this.drawRect(
+        headGrid[0] * this.pixelsPerGrid,
+        (headGrid[1] + 1) * this.pixelsPerGrid,
+        this.pixelsPerGrid,
+        movementPixels,
+        "blue"
+      );
     }
   }
 
   updateSnakeState(newTimestamp) {
-    if(this.currentDirection > 0) {
+    if (this.currentDirection > 0) {
       const headGrid = this.snakeState[this.snakeState.length - 1];
       var nextGrid = [headGrid[0], headGrid[1]];
       switch (this.currentDirection) {
@@ -197,18 +314,32 @@ class SnakeGame {
       }
       this.snakeState.push(nextGrid);
       // Draw next grid
-      this.drawRect(nextGrid[0] * this.pixelsPerGrid, nextGrid[1] * this.pixelsPerGrid, this.pixelsPerGrid, this.pixelsPerGrid, "blue");
+      this.drawRect(
+        nextGrid[0] * this.pixelsPerGrid,
+        nextGrid[1] * this.pixelsPerGrid,
+        this.pixelsPerGrid,
+        this.pixelsPerGrid,
+        "blue"
+      );
 
-      if(this.growthSpurt < 1) {
+      if (this.growthSpurt < 1) {
         const tailGrid = this.snakeState[0];
         this.snakeState.shift();
         // Undraw tail grid
-        this.drawRect(tailGrid[0] * this.pixelsPerGrid, tailGrid[1] * this.pixelsPerGrid, this.pixelsPerGrid, this.pixelsPerGrid, "white");
+        if (!(nextGrid[0] === tailGrid[0] && nextGrid[1] === tailGrid[1])) {
+          this.drawRect(
+            tailGrid[0] * this.pixelsPerGrid,
+            tailGrid[1] * this.pixelsPerGrid,
+            this.pixelsPerGrid,
+            this.pixelsPerGrid,
+            "white"
+          );
+        }
       } else {
         this.growthSpurt--;
       }
     }
-    if(this.newDirections.length > 0) {
+    if (this.newDirections.length > 0) {
       this.currentDirection = this.newDirections[0];
       this.newDirections.shift();
     }
@@ -220,12 +351,20 @@ class SnakeGame {
     newSnakeGame();
   }
 
+  stopGame() {
+    this.gameStopped = true;
+  }
+
   render(newTimestamp) {
+    if (this.gameStopped) {
+      return;
+    }
     // Render the current frame
     var movementPixels = this.calculateMovement(newTimestamp);
     // If a single pixel is moved then it requires a repaint
     if (movementPixels > 0) {
-      if(movementPixels > this.pixelsPerGrid) { // Past one grid
+      if (movementPixels > this.pixelsPerGrid) {
+        // Past one grid
         this.updateSnakeState(newTimestamp);
         movementPixels -= this.pixelsPerGrid;
         this.eatApple();
@@ -246,19 +385,18 @@ class SnakeGame {
   }
 }
 
+let lastGame = null;
 function newSnakeGame() {
+  if (lastGame) {
+    lastGame.stopGame();
+  }
   const canvas = document.getElementById("gameBoard");
   const scoreElement = document.getElementById("score");
-  const context = canvas.getContext('2d');
+  const gameSpeed = document.getElementById("gameSpeed").value;
+  const context = canvas.getContext("2d");
   context.clearRect(0, 0, canvas.width, canvas.height);
   scoreElement.innerHTML = "0";
-  new SnakeGame(
-    canvas,
-    scoreElement,
-    10,
-    20,
-    3
-  );
+  lastGame = new SnakeGame(canvas, scoreElement, gameSpeed, 20, 3);
 }
 
 newSnakeGame();

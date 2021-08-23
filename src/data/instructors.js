@@ -19,7 +19,7 @@ export default [
       },
     ],
     description:
-      "Bea is an experienced graphic designer and videographer with 10 years of experience. Fast tracked to an art career from a young age, she has created artworks displayed in Museums. Bea loves to work with kids and give them essential skills for their future artistic careers.",
+      "Bea is a graphic designer and videographer with 10 years of experience. Fast tracked to an art career from a young age, she has created artworks displayed in Museums. Bea loves to work with kids and give them essential skills for their future artistic careers.",
     classes: ["Digital Art", "Handicraft", "Videography"],
   },
   {
@@ -39,7 +39,7 @@ export default [
       },
     ],
     description:
-      "Jason is professional software engineer with 7 years of industry experience. He also loves tinkering with hardware and working on all kinds of weird projects for fun. Jason has made his personal mission to teach and inspire young children on building the technology of the future.",
+      "Jason is a software engineer with 10 years of industry experience. He also loves tinkering with hardware and working on all kinds of weird projects for fun. Jason has made his personal mission to teach and inspire young children on building the technology of the future.",
     classes: ["Computer Programming", "Electionics", "Practical Mathematics"],
   },
 ];

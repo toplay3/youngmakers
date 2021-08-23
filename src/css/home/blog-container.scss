@@ -51,9 +51,12 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    color: white;
 
     &:hover {
       background-color: chocolate;
+      color: white;
+      text-decoration: none;
     }
   }
 }
