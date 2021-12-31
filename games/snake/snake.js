@@ -50,11 +50,16 @@ class SnakeGame {
     this.score = 0;
     this.appleCoordinates = [];
     this.generateApple();
-    this.addEventListeners();
+    this.mouseEventListenerHandler = null;
+    this.addMouseEventListener();
   }
 
-  addEventListeners() {
-    document.addEventListener("keydown", (event) => {
+  removeMouseEventListener() {
+    document.removeEventListener("keydown", this.mouseEventListenerHandler);
+  }
+
+  addMouseEventListener() {
+    this.mouseEventListenerHandler = (event) => {
       const keyCode = event.which || event.keyCode;
       const lastDirection =
         this.newDirections.length > 0
@@ -109,7 +114,8 @@ class SnakeGame {
         this.lastGridTime = performance.now();
         this.render(this.lastGridTime);
       }
-    });
+    }
+    document.addEventListener("keydown", this.mouseEventListenerHandler);
   }
 
   generateApple() {
@@ -353,6 +359,7 @@ class SnakeGame {
 
   stopGame() {
     this.gameStopped = true;
+    this.removeMouseEventListener();
   }
 
   render(newTimestamp) {
@@ -371,17 +378,16 @@ class SnakeGame {
       }
 
       if (this.isTouching()) {
+        this.stopGame();
         return this.gameOver();
       } else {
         this.repaint(movementPixels);
       }
     }
-    // Recursively render the next frame >60fps
-    setTimeout(() => {
-      window.requestAnimationFrame((newTimestamp) => {
-        this.render(newTimestamp);
-      });
-    }, 16);
+
+    window.requestAnimationFrame((newTimestamp) => {
+      this.render(newTimestamp);
+    });
   }
 }
 
