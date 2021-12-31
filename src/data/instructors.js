@@ -7,7 +7,7 @@ export default [
     photo: beaInstructorImage,
     specialty: "Visual Arts",
     phone: "64-20-409-42115",
-    email: "bea@youngmakers.nz",
+    email: "bea.moon@youngmakers.nz",
     socialMedia: [
       {
         link: "https://www.linkedin.com",
@@ -27,7 +27,7 @@ export default [
     photo: jasonInstructorImage,
     specialty: "Technology",
     phone: "64-20-409-42115",
-    email: "jason@youngmakers.nz",
+    email: "jason.yin@youngmakers.nz",
     socialMedia: [
       {
         link: "https://www.linkedin.com",

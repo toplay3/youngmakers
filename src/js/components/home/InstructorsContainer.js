@@ -27,7 +27,7 @@ class InstructorsContainer extends React.Component {
                     </div>
                     <div class="info-row">
                       <span class="fa fa-envelope"></span>
-                      <span>{instructor.email}</span>
+                      <span class="email">{instructor.email}</span>
                     </div>
                     <div class="social-media">
                       {instructor.socialMedia.map((sm, i) => {
