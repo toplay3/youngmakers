@@ -6,7 +6,6 @@ import React, { Suspense } from "react";
 
 const HomePage = React.lazy(() => import("./js/pages/HomePage"));
 const OurSchoolPage = React.lazy(() => import("./js/pages/OurSchoolPage"));
-const InstructorsPage = React.lazy(() => import("./js/pages/InstructorsPage"));
 const GalleryPage = React.lazy(() => import("./js/pages/GalleryPage"));
 const CoursePage = React.lazy(() => import("./js/pages/CoursePage"));
 const ContactPage = React.lazy(() => import("./js/pages/ContactPage"));
@@ -47,7 +46,6 @@ class ReactRoot extends React.Component {
               <Switch>
                 <Route exact path="/" component={HomePage}/>
                 <Route path="/our-school" component={OurSchoolPage}/>
-                <Route path="/instructors" component={InstructorsPage}/>
                 <Route path="/gallery" component={GalleryPage}/>
                 <Route path="/course/:courseId" component={CoursePage}/>
                 <Route path="/contact" component={ContactPage}/>

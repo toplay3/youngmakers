@@ -27,6 +27,7 @@
     font-size: clamp(11px, 1.9vw, 18px);
     span {
       padding: 0 20px;
+      cursor: pointer;
       &:not(:last-child) {
         border-right: 1px solid rgb(100, 100, 100);
       }

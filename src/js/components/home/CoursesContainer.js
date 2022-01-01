@@ -9,7 +9,7 @@ class CoursesContainer extends React.Component {
       <div class="courses-container">
         {subjects.map((subject, i) => {
           return (
-            <div class="course">
+            <div class="course" ref={subject.ref}>
               <div class="course-info">
                 <h2>{subject.title}</h2>
                 <div class="course-description">{subject.description}</div>

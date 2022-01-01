@@ -5,7 +5,7 @@ import instructors from "../../../data/instructors";
 class InstructorsContainer extends React.Component {
   render() {
     return (
-      <div class="instructors-container">
+      <div class="instructors-container" id="instructors">
         <h2>Current Instructors</h2>
         <div class="instructor-list">
           {instructors.map((instructor, i) => {

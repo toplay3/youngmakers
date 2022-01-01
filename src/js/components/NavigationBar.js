@@ -6,6 +6,8 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import Logo from "./Logo";
 import subjects from "../../data/courses";
 import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
+import scrollToSection from "../helpers/scrollToSection";
 
 class NavigationBar extends React.Component {
   render() {
@@ -45,7 +47,7 @@ class NavigationBar extends React.Component {
                 );
               })}
               <NavDropdown.Divider />
-              <NavDropdown.Item eventKey="5" as={Link} to="/instructors">
+              <NavDropdown.Item eventKey="5" as={HashLink} to="/#instructors" scroll={(el) => scrollToSection(el)}>
                 Instructors
               </NavDropdown.Item>
             </NavDropdown>
