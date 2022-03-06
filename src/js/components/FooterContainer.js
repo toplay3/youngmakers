@@ -34,13 +34,12 @@ class FooterContainer extends React.Component {
                 <div class="list-item">
                   <i class="fas fa-map-marker-alt"></i>
                   <span class="list-info-item">
-                    130 XXX Wellington, 6011
-                    <br /> Office hours 1-5pm weekdays
+                    Office hours 9am - 5pm Everyday
                   </span>
                 </div>
                 <div class="list-item">
                   <i class="fas fa-phone-alt"></i>
-                  <span class="list-info-item">02040942115</span>
+                  <span class="list-info-item">+64 2040942115</span>
                 </div>
                 <div class="list-item">
                   <i class="fas fa-envelope"></i>

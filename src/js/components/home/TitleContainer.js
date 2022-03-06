@@ -8,7 +8,7 @@ class TitleContainer extends React.Component {
     return (
       <div class="title-container">
         <h1>Young Makers Academy</h1>
-        <h4>After school art and technology classes for aged 9 - 17</h4>
+        <h4>Online art and technology classes for aged 9 - 17</h4>
         <p>
           {subjects.map((subject, i) => {
             return (

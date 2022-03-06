@@ -58,9 +58,9 @@ class NavigationBar extends React.Component {
         </Navbar.Collapse>
         <Nav className="nav-location d-none d-lg-block">
           <span>
-            130 XXXXXX, Wellington, 6011
+            +64 2040942115
             <br />
-            Office hours: 1-5pm Weekdays
+            Office hours: 9am-5pm Everyday
           </span>
         </Nav>
       </Navbar>
