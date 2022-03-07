@@ -64,7 +64,7 @@ class HeaderContainer extends React.Component {
         </Carousel>
         <div class="header-title">
           Build fun and interesting projects by learning from
-          amazing instructors online
+          amazing instructors live online
         </div>
         <img src={headerDivider} class="header-divider"/>
       </div>

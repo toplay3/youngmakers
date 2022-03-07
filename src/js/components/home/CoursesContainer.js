@@ -31,13 +31,13 @@ class CoursesContainer extends React.Component {
                       <td>
                         <b>Price:</b>
                       </td>
-                      <td>{subject.price}</td>
+                      <td><span class="free-lesson">3 lessons free</span> then {subject.price}/lesson</td>
                     </tr>
                     <tr>
                       <td>
                         <b>Duration:</b>
                       </td>
-                      <td>{subject.duration}</td>
+                      <td>{subject.duration} lessons</td>
                     </tr>
                     <tr>
                       <td>
