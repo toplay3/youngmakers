@@ -25,7 +25,7 @@ class _ScrollToTop extends React.Component {
   componentDidUpdate(prevProps) {
     if (this.props.location !== prevProps.location) {
       const allContainer = document.getElementById("all-container")
-      // allContainer.scrollTo(0, 0)
+      allContainer.scrollTo(0, 0)
     }
   }
 
