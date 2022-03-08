@@ -24,12 +24,33 @@ import {
 class _ScrollToTop extends React.Component {
   componentDidUpdate(prevProps) {
     if (this.props.location !== prevProps.location) {
-      window.scrollTo(0, 0)
+      const allContainer = document.getElementById("all-container")
+      // allContainer.scrollTo(0, 0)
     }
   }
 
   render() {
-    return this.props.children
+    const pageClass = "page-" + (this.props.location.pathname.split("/")[1] || "home")
+
+    return <React.Fragment>
+      <NavigationBar></NavigationBar>
+      <div id="all-container" className={pageClass}>
+        <div className="page-container">
+          <Suspense fallback={<div class="loading-placeholder">Loading...</div>}>
+            <Switch>
+              <Route exact path="/" component={HomePage}/>
+              <Route path="/our-school" component={OurSchoolPage}/>
+              <Route path="/gallery" component={GalleryPage}/>
+              <Route path="/course/:courseId" component={CoursePage}/>
+              <Route path="/contact" component={ContactPage}/>
+              <Route path="/blog" component={BlogPage}/>
+              <Route path="/blog-entry/:blogEntryId" component={BlogEntryPage}/>
+            </Switch>
+          </Suspense>
+        </div>
+        <FooterContainer></FooterContainer>
+      </div>
+    </React.Fragment>
   }
 }
 
@@ -38,25 +59,9 @@ const ScrollToTop = withRouter(_ScrollToTop);
 class ReactRoot extends React.Component {
   render() {
     return (
-      <Router>
-        <ScrollToTop>
-          <NavigationBar></NavigationBar>
-          <div class="page-container">
-            <Suspense fallback={<div class="loading-placeholder">Loading...</div>}>
-              <Switch>
-                <Route exact path="/" component={HomePage}/>
-                <Route path="/our-school" component={OurSchoolPage}/>
-                <Route path="/gallery" component={GalleryPage}/>
-                <Route path="/course/:courseId" component={CoursePage}/>
-                <Route path="/contact" component={ContactPage}/>
-                <Route path="/blog" component={BlogPage}/>
-                <Route path="/blog-entry/:blogEntryId" component={BlogEntryPage}/>
-              </Switch>
-            </Suspense>
-          </div>
-          <FooterContainer></FooterContainer>
-        </ScrollToTop>
-      </Router>
+        <Router>
+          <ScrollToTop></ScrollToTop>
+        </Router>
     );
   }
 }

@@ -1,0 +1,12 @@
+#all-container.page-blog::-webkit-scrollbar {
+  width: 0; /* Remove scrollbar space */
+  background: transparent; /* Optional: just make scrollbar invisible */
+}
+
+.blog-page {
+  height: calc(100vh - 48px);
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
+}

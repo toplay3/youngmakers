@@ -1,4 +1,5 @@
 import React from "react";
+import "../../css/blog-page.scss";
 
 class BlogPage extends React.Component {
     componentDidMount() {
@@ -6,7 +7,9 @@ class BlogPage extends React.Component {
     }
     render() {
       return (
-        <div><br/>Blog page<br/></div>
+        <div class="blog-page">
+          <iframe src="https://youngmakersnz.blogspot.com/"></iframe>
+        </div>
       );
     }
   }

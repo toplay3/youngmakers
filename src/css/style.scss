@@ -6,6 +6,17 @@ body {
   -moz-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   background-color: snow;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#all-container {
+  position: absolute;
+  top: 48px;
+  bottom: 0px;
+  overflow: auto;
+  left: 0px;
+  right: 0px;
 }
 
 h2 {
